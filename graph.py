@@ -19,15 +19,24 @@ class WeightedGraph:
     def add_edge(self, vertex1: str, vertex2: str, weight: int) -> None:
         """
         """
-
-
+        temp_list = []
+        if vertex1 in self.vertex_list and vertex2 in self.vertex_list:
+            if vertex1 not in self.adjancent_list:
+                temp_list.append([vertex2, weight])
             
+            elif vertex1 in self.adjancent_list:
+                temp_list.extend(self.adjancent_list[vertex1])
+                temp_list.append([vertex2, weight])
+                self.adjancent_list[vertex1] = temp_list
+        
+        print('vertex doesnt exist')
+        
 
     def shortest_path(self):
         pass
 
 """
-    graph = {
+    test_graph = {
         {'Mchinji': {'kasungu': 141, 'Lilongwe': 109}},
         {'kasungu': {'Mchinji': 141, 'Dowa': 117, 'Ntchisi': 66}},
         {'Lilongwe': {'Dowa': 55, 'Mchinji':109, 'Dedza': 92}},

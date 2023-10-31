@@ -5,7 +5,7 @@ from graph import WeightedGraph, shortest_path
 
 
 if __name__ == '__main__':
-    """
+    
     graph = WeightedGraph()
 
     graph.add_vertex('Mchinji')
@@ -20,11 +20,12 @@ if __name__ == '__main__':
 
     graph.add_edge('Mchinji', 'Kasungu', 141)
     graph.add_edge('Mchinji', 'Lilongwe', 109)
+    graph.add_edge()
 
     print(graph.adjancent_list)
-    """
+   
 
-    graph = {
+    test_graph = {
     'Mchinji': {'Kasungu': 141, 'Lilongwe': 109},
     'Kasungu': {'Mchinji': 141, 'Dowa': 117, 'Ntchisi': 66},
     'Lilongwe': {'Dowa': 55, 'Mchinji':109, 'Dedza': 92},

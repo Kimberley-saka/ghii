@@ -13,14 +13,14 @@ class WeightedGraph:
 
     def __init__(self) -> None:
         self.adjancent_list = {}
-        self.vertep = []  # keep track of vertices in graph
+        self.vertex = []  # keep track of vertices in graph
 
     def add_vertex(self, vertex: str) -> None:
         """
         adds vertices
         """
-        if vertex not in self.vertep:
-            self.vertep.append(vertex)
+        if vertex not in self.vertex:
+            self.vertex.append(vertex)
 
         else:
             print(f'vertex, {vertex} already exists')
@@ -30,7 +30,7 @@ class WeightedGraph:
         Adds edges to adjacent list given the graphs vertices and weight
         """
         temp = {}
-        if vertex1 in self.vertep and vertex2 in self.vertep:
+        if vertex1 in self.vertex and vertex2 in self.vertex:
             if vertex1 not in self.adjancent_list:
                 temp = {vertex2: weight}
                 self.adjancent_list[vertex1] = temp

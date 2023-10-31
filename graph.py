@@ -32,7 +32,7 @@ class WeightedGraph:
         temp = {}
         if vertex1 in self.vertep and vertex2 in self.vertep:
             if vertex1 not in self.adjancent_list:
-                temp = ({vertex2: weight})
+                temp = {vertex2: weight}
                 self.adjancent_list[vertex1] = temp
 
             elif vertex1 in self.adjancent_list:

@@ -43,7 +43,7 @@ class WeightedGraph:
             print('vertex doesnt exist')
 
 
-def shortest_path(graph: Dict[str, List], src: str, dest: str) -> None:
+def shortest_path(graph: Dict[str, Dict[str, int]], src: str, dest: str) -> None:
     """
     Finds the shortest path from one vertex(district) to another
     in a weighted graph

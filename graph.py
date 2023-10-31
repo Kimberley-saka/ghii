@@ -49,36 +49,36 @@ def shortest_path(graph: Dict[str, List], src: str, dest: str) -> None:
     in a weighted graph
     """
     infinity = sys.maxsize
-    vertex_data ={
-        'Mchinji': {'cost': infinity, 'pred':[]},
-        'Kasungu': {'cost': infinity, 'pred':[]},
-        'Lilongwe': {'cost': infinity, 'pred':[]},
-        'Dowa': {'cost': infinity, 'pred':[]},
-        'Ntchisi': {'cost': infinity, 'pred':[]},
-        'Nkhotakota': {'cost': infinity, 'pred':[]},
-        'Salima': {'cost': infinity, 'pred':[]},
-        'Dedza': {'cost': infinity, 'pred':[]},
-        'Ntcheu': {'cost': infinity, 'pred':[]},
+    vertex_data = {
+        'Mchinji': {'cost': infinity, 'pred': []},
+        'Kasungu': {'cost': infinity, 'pred': []},
+        'Lilongwe': {'cost': infinity, 'pred': []},
+        'Dowa': {'cost': infinity, 'pred': []},
+        'Ntchisi': {'cost': infinity, 'pred': []},
+        'Nkhotakota': {'cost': infinity, 'pred': []},
+        'Salima': {'cost': infinity, 'pred': []},
+        'Dedza': {'cost': infinity, 'pred': []},
+        'Ntcheu': {'cost': infinity, 'pred': []},
     }
 
     visited = []
     vertex_data[src]['cost'] = 0
     temp = src
 
-    for _ in range(8):
+    for _ in range(9):
         if temp not in visited:
             visited.append(temp)
 
             min_heap = []
             for j in graph[temp]:
                 if j not in visited:
-                    cost = vertex_data[temp]['cost'] + graph[temp][j] 
+                    cost = vertex_data[temp]['cost'] + graph[temp][j]
                     if cost < vertex_data[j]['cost']:
                         vertex_data[j]['cost'] = cost
                         vertex_data[j]['pred'] = vertex_data[temp]['pred'] + [temp]
-                    
+
                     heappush(min_heap, (vertex_data[j]['cost'], j))
-        
+
         if min_heap:
             heapify(min_heap)
             temp = min_heap[0][1]
